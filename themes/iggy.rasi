@@ -1,0 +1,79 @@
+/**
+ * ROFI Color theme
+ * User: Qball
+ * Copyright: Dave Davenport
+ */
+
+
+* {
+  /* Default background color */
+	background-color: transparent;
+	text-color:       white;
+    font: "Ubuntu 14";
+}
+
+
+window {
+	padding: 10px;
+
+	border-color: #ff6767;
+	border:       4px;
+	border-radius: 20px;
+
+	background-color: #000000cc;
+
+}
+
+mainbox {
+	spacing: 10px;
+	children: [inputbar,listview];
+}
+
+inputbar {
+	spacing: 0.4em;
+	children: [ entry,overlay,case-indicator];
+}
+
+inputbar, message {
+	padding: 0.5em;  
+	border-color: #ff6767;
+	border: 5px;
+	border-radius: 10px;
+	background-color: #000000;
+}
+
+listview {
+	columns: 3;
+	lines: 3;
+	spacing: 10px;
+}
+
+element {
+    padding: 10px;
+    orientation: vertical;
+	background: transparent;
+	children: [ element-icon, element-text ];
+	border-radius: 10px;
+	border-color: #454545;
+	border:  5px;
+}
+
+element-icon {
+	size: 9em;
+}
+
+element selected {
+	border-color: #ff6767;
+	background-color: #abababcc;
+}
+
+element-text {
+	font: inherit; 
+	horizontal-align: 0.5;
+}
+
+entry {
+	placeholder: "Iggy";
+	placeholder-color: darkgrey/30%;
+	padding: 0 20px;
+}
