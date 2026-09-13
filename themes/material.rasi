@@ -1,0 +1,110 @@
+/*
+ * ROFI color theme
+ *
+ * Based on Base16 Material Color Scheme (https://github.com/ntpeters/base16-materialtheme-scheme)
+ *
+ * Modified by: Dave Davenport
+ * User: Tomaszal
+ * Copyright: Tomas Zaluckij
+ */
+
+* {
+	spacing: 0;
+	background-color: transparent;
+	font: "Ubuntu 16";
+}
+
+window {
+	transparency: "real";
+	background-color: #000000cc;
+	border: 4px;
+	border-color: #ff6767;
+	border-radius: 20px;
+}
+
+mainbox {
+	children: [inputbar, message, mode-switcher, listview];
+}
+
+inputbar {
+	margin: 10px;
+	children: [prompt, textbox-prompt-colon, entry, case-indicator];
+	border-color: #ff6767;
+	padding: 10px;
+	border: 4px;
+	border-radius: 10px;
+}
+
+prompt {
+	text-color: #ffffff;
+}
+
+textbox-prompt-colon {
+	expand: false;
+	str: " : ";
+	margin: 0 1ch 0 0;
+	text-color: #ffffff;
+}
+
+entry {
+	text-color: #ffffff;
+}
+
+case-indicator {
+	text-color: #abcdef;
+}
+
+mode-switcher, message {
+	margin: 10px;
+	spacing: 10px;
+}
+
+textbox {
+	text-color: #ffffff;
+	padding: 10px;
+	border: 4px;
+	border-radius: 10px;
+	border-color: #ff6767;
+}
+
+button, {
+	text-color: #ffffff;
+	padding: 10px;
+	border: 4px;
+	border-radius: 10px;
+	border-color: #454545;
+}
+
+button selected {
+	highlight: bold;
+	border-color: #ff6767;
+}
+
+listview {
+	margin: 10px;
+	lines: 7;
+	spacing: 10px;
+}
+
+element {
+	padding: 10px;
+	spacing: 10px;
+	border-radius: 10px;
+	border: 4px;
+	children: [element-icon, element-text];
+}
+element-text, element-icon {
+	background-color : inherit;
+	text-color	     : #ffffff;
+}
+
+element normal {
+	border-color: #454545;
+}
+
+element selected {
+	border: 4px;
+	border-color: #ff6767;
+	border-radius: 10px;
+	highlight: bold;
+}
