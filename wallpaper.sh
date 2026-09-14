@@ -28,11 +28,8 @@ if [ -z "$monitor" ]; then
 fi
 
 wallpapers="$HOME/Pictures/Wallpapers/"
-if [ -n "$selected" ] && [ -n "$monitor" ]; then
-	if [ -e "$wallpapers/$monitor.jpg" ]; then
-		rm "$wallpapers/$monitor.jpg"
-	fi
 
-	cp "$dir/$selected" "$wallpapers/$monitor.jpg"
-	swaybg -o "$monitor" -i "$wallpapers/$monitor.jpg" &> /dev/null & 
-fi
+[ -e "$wallpapers/$monitor.jpg" ] && rm "$wallpapers/$monitor.jpg"
+
+cp "$dir/$selected" "$wallpapers/$monitor.jpg"
+swaybg -o "$monitor" -i "$wallpapers/$monitor.jpg" &> /dev/null & 
