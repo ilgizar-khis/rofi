@@ -111,7 +111,7 @@ element selected {
     children: [listview, icon-current-entry];
   }
   listview {
-	  lines: 4;
+	  lines: 12;
   }
 
 }
