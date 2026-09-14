@@ -8,39 +8,40 @@
  * modified by: Razigli
  */
 
+@import "values.rasi"
+
 * {
 	background-color: transparent;
-	text-color:       white;
-	font: "Ubuntu 16";
+	font: @default-font;
 }
 
 window {
-	background-color: #000000cc;
+	background-color: @default-window-background-color;
 	children: [ wrap, listview-split];
-	padding: 10px;
-	spacing: 10px;
-	border: 4px;
+	padding: @default-padding;
+	spacing: @default-spacing;
+	border: @default-border-size;
 	width: 1100px;
-	border-radius: 20px;
-	border-color: #ff6767;
+	border-radius: @default-window-border-radius;
+	border-color: @default-active-border-color;
 }
 
 
 /** We add an extra child to this if PREVIEW=true */
 listview-split {
-  orientation: horizontal;
-  spacing: 0.4em;
-  children: [listview];
+	orientation: horizontal;
+	spacing: @default-spacing;
+	children: [listview];
 }
 
 wrap {
 	expand: false;
 	orientation: vertical;
 	children: [ inputbar, message ];
-	border: 4px;
-	border-radius: 10px;
-	border-color: #ff6767;
-	border-radius: 0.4em;
+	border: @default-border-size;
+	border-radius: @default-border-radius;
+	border-color: @default-active-border-color;
+	border-radius: @default-border-radius;
 }
 
 icon-ib {
@@ -51,33 +52,31 @@ icon-ib {
 	size: 1em;
 }
 inputbar {
-	spacing: 0.4em;
-	padding: 0.4em 0.8em;
+	spacing: @default-spacing;
+	padding: @default-padding;
 	children: [ entry ];
 }
 entry {
-	placeholder: "Search";
-	placeholder-color: grey;
+	text-color: @default-text-color;
 }
 message {
-	background-color: red/20%;
-	border-color: lightsalmon;
-	border: 3px 0px 0px 0px;
-	padding: 10px;
-	spacing: 10px;
+	background-color: @default-background-color;
+	border-color: @default-active-border-color;
+	border: @default-border-size;
+	padding: @default-padding;
+	spacing: @default-spacing;
 }
 
 listview {
-	spacing: 10px;
+	spacing: @default-spacing;
 }
 
 element {
 	orientation: vertical;
-	padding: 0.1em;
 
-	border-color: #454545;
-	border: 4px;
-	border-radius: 10px;
+	border-color: @default-normal-border-color;
+	border: @default-border-size;
+	border-radius: @default-border-radius;
 
 	children: [ element-text ];
 }
@@ -85,13 +84,14 @@ element {
 element-text {
 	horizontal-align: 0.5;
 	vertical-align: 0.5;
-	padding: 0.2em;
+	padding: @default-padding;
+	text-color: @default-text-color;
 }
 
 element selected {
-	border-color: #ff6767;
-	border: 4px;
-	border-radius: 10px;
+	border-color: @default-active-border-color;
+	border: @default-border-size;
+	border-radius: @default-border-radius;
 }
 
 /**
@@ -101,9 +101,9 @@ element selected {
 @media ( enabled: env(PREVIEW, false)) {
   /** preview widget */
   icon-current-entry {
-	border-color: #ff6767;
-	border: 4px;
-	border-radius: 10px;
+	border-color: @default-active-border-color;
+	border: @default-border-size;
+	border-radius: @default-border-radius;
     expand:          false;
     size:            70%;
   }
@@ -119,7 +119,7 @@ element selected {
 @media ( enabled: env(NO_IMAGE, false)) {
 	listview {
 		columns: 1;
-		spacing: 0.4em;
+		spacing: @default-spacing;
 	}
 	element {
 		children: [ element-text ];
