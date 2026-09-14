@@ -1,6 +1,8 @@
 #!/usr/bin/bash
 lines=""
-dir="$HOME/backgrounds/"
+
+# WALLPAPERS="$(xdg-user-dir PICRURES)/backgrounds"
+[ -n "$WALLPAPERS" ] && dir="$WALLPAPERS" || dir="$(xdg-user-dir PICTURES)/backgrounds"
 
 count="$(ls -1 $dir | wc -l)"
 if [[ "$count" == "0" ]]; then
