@@ -1,6 +1,9 @@
 #!/usr/bin/bash
 lines=""
-dir="$(xdg-user-dir PICTURES)/Screenshots"
+
+[ -n "$SCREENSHOTS" ] &&
+	dir="$SCREENSHOTS" ||
+	dir="$(xdg-user-dir PICTURES)/Screenshots"
 
 for file in $dir/*.png; do
 	[[ -f "$file" ]] &&
