@@ -15,7 +15,7 @@ for file in $dir/*.jpg; do
 	lines="$(basename $file)\0icon\x1f$file\n$lines"
 done
 
-selected="$(echo -en "$lines" | PREVIEW=true rofi -dmenu -theme $HOME/.config/rofi/themes/preview.rasi)"
+selected="$(echo -en "$lines" | PREVIEW=true rofi -dmenu -theme preview.rasi)"
 
 if [ -z "$selected" ]; then
 	exit 0
