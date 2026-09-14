@@ -1,3 +1,15 @@
 * {
 	default-font: "Ubuntu 16";
+	default-window-background-color: #000000cc;
+	default-background-color: transparent;
+	default-border-size: 4px;
+	default-active-border-color: #ff6767;
+	default-normal-border-color: #454545;
+	default-margin: 10px;
+	default-padding: 10px;
+	default-prompt-margin: 0 1ch 0 0;
+	default-spacing: 10px;
+	default-window-border-radius: 20px;
+	default-border-radius: 10px;
+	default-text-color: #ffffff;
 }
