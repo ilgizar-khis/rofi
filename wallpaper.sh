@@ -2,33 +2,26 @@
 lines=""
 
 # WALLPAPERS="$(xdg-user-dir PICRURES)/backgrounds"
-[ -n "$WALLPAPERS" ] && dir="$WALLPAPERS" || dir="$(xdg-user-dir PICTURES)/backgrounds"
+[ -n "$WALLPAPERS" ] &&
+	dir="$WALLPAPERS" ||
+	dir="$(xdg-user-dir PICTURES)/backgrounds"
 
-count="$(ls -1 $dir | wc -l)"
-if [[ "$count" == "0" ]]; then
-	exit 0
-fi
-for file in $dir/*.jpg; do
-	if [ -z "$file" ]; then
-		exit 0
-	fi
-	lines="$(basename $file)\0icon\x1f$file\n$lines"
+for file in $dir/*.jpg $dir/*.png $dir/*.webp; do
+	[[ -f "$file" ]] &&
+		filename="$(basename $file)" \
+		lines="$filename\0icon\x1f$file\n$lines"
 done
 
 selected="$(echo -en "$lines" | PREVIEW=true rofi -dmenu -theme preview.rasi)"
 
-if [ -z "$selected" ]; then
-	exit 0
-fi
+[ -z "$selected" ] && exit 0
 
 monitor="$(hyprctl monitors -j | jq -r '.[].name?' | rofi -dmenu)"
 
-if [ -z "$monitor" ]; then
-	exit 0
-fi
+[ -z "$monitor" ] && exit 0
 
-[ -e "$dir/$monitor.jpg" ] && rm "$dir/$monitor.jpg"
+[ -e "$dir/$monitor.jpg" ] &&
+	rm "$dir/$monitor.jpg"
 
-cp "$dir/$selected" "$dir/$monitor.jpg"
-
-swaybg -o "$monitor" -i "$dir/$monitor.jpg" &> /dev/null & 
+cp "$dir/$selected" "$dir/$monitor.jpg" &&
+	swaybg -o "$monitor" -i "$dir/$monitor.jpg" &>/dev/null &
