@@ -1,5 +1,5 @@
 configuration {
     modi: "drun,window,run";
 }
-@theme "~/.config//rofi/themes/list.rasi"
+@theme "list.rasi"
 
