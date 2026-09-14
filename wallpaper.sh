@@ -17,7 +17,15 @@ done
 
 selected="$(echo -en "$lines" | PREVIEW=true rofi -dmenu -theme $HOME/.config/rofi/themes/preview.rasi)"
 
+if [ -z "$selected" ]; then
+	exit 0
+fi
+
 monitor="$(hyprctl monitors -j | jq -r '.[].name?' | rofi -dmenu)"
+
+if [ -z "$monitor" ]; then
+	exit 0
+fi
 
 wallpapers="$HOME/Pictures/Wallpapers/"
 if [ -n "$selected" ] && [ -n "$monitor" ]; then
