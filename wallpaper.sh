@@ -27,9 +27,8 @@ if [ -z "$monitor" ]; then
 	exit 0
 fi
 
-wallpapers="$HOME/Pictures/Wallpapers/"
+[ -e "$dir/$monitor.jpg" ] && rm "$dir/$monitor.jpg"
 
-[ -e "$wallpapers/$monitor.jpg" ] && rm "$wallpapers/$monitor.jpg"
+cp "$dir/$selected" "$dir/$monitor.jpg"
 
-cp "$dir/$selected" "$wallpapers/$monitor.jpg"
-swaybg -o "$monitor" -i "$wallpapers/$monitor.jpg" &> /dev/null & 
+swaybg -o "$monitor" -i "$dir/$monitor.jpg" &> /dev/null & 
