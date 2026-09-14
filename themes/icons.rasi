@@ -5,76 +5,72 @@
  * modified by: Razigli
  */
 
+@import "values.rasi"
 
 * {
   /* Default background color */
-	background-color: transparent;
-	text-color:       white;
-    font: "Ubuntu 14";
+	background-color: @default-background-color;
+    font: @default-font;
 }
 
 
 window {
-	padding: 10px;
+	padding: @default-padding;
 
-	border-color: #ff6767;
-	border:       4px;
-	border-radius: 20px;
+	border-color: @default-active-border-color;
+	border:  @default-border-size;
+	border-radius: @default-window-border-radius;
 
-	background-color: #000000cc;
+	background-color: @default-window-background-color;
 
 }
 
 mainbox {
-	spacing: 10px;
+	spacing: @default-spacing;
 	children: [inputbar,listview];
 }
 
 inputbar {
-	spacing: 0.4em;
+	spacing: @default-spacing;
 	children: [ entry,overlay,case-indicator];
 }
 
 inputbar, message {
-	padding: 0.5em;  
-	border-color: #ff6767;
-	border: 5px;
-	border-radius: 10px;
-	background-color: #000000;
+	padding: @default-padding;
+	border-color: @default-active-border-color;
+	border:  @default-border-size;
+	border-radius: @default-border-radius;
 }
 
 listview {
 	columns: 3;
 	lines: 3;
-	spacing: 10px;
+	spacing: @default-spacing;
 }
 
 element {
-    padding: 10px;
+	padding: @default-padding;
     orientation: vertical;
-	background: transparent;
 	children: [ element-icon, element-text ];
-	border-radius: 10px;
-	border-color: #454545;
-	border:  5px;
+	border-radius: @default-border-radius;
+	border-color: @default-normal-border-color;
+	border:  @default-border-size;
 }
 
 element-icon {
-	size: 9em;
+	size: 5em;
 }
 
 element selected {
-	border-color: #ff6767;
-	background-color: #abababcc;
+	border-color: @default-active-border-color;
 }
 
 element-text {
-	font: inherit; 
 	horizontal-align: 0.5;
+	text-color: @default-text-color;
 }
 
 entry {
-	placeholder: "Iggy";
-	placeholder-color: darkgrey/30%;
-	padding: 0 20px;
+	padding: @default-padding;
+	text-color: @default-text-color;
 }
