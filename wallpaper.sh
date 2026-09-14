@@ -34,5 +34,5 @@ if [ -n "$selected" ] && [ -n "$monitor" ]; then
 	fi
 
 	cp "$dir/$selected" "$wallpapers/$monitor.jpg"
-	swaybg -o "$monitor" -i "$wallpapers/$monitor.jpg"
+	swaybg -o "$monitor" -i "$wallpapers/$monitor.jpg" &> /dev/null & 
 fi
