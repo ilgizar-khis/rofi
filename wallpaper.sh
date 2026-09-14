@@ -12,7 +12,8 @@ for file in $dir/*.jpg $dir/*.png $dir/*.webp; do
 		lines="$filename\0icon\x1f$file\n$lines"
 done
 
-selected="$(echo -en "$lines" | PREVIEW=true rofi -dmenu -theme preview.rasi)"
+export PREVIEW=true
+selected="$(echo -en "$lines" | rofi -dmenu -theme preview.rasi)"
 
 [ -z "$selected" ] && exit 0
 
