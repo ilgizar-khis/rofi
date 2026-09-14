@@ -11,17 +11,16 @@
 @import "values.rasi"
 
 * {
-	spacing: 0;
-	background-color: transparent;
+	background-color: @default-background-color;
 	font: @default-font;
 }
 
 window {
 	transparency: "real";
-	background-color: #000000cc;
-	border: 4px;
-	border-color: #ff6767;
-	border-radius: 20px;
+	background-color: @default-window-background-color;
+	border: @default-border-size;
+	border-color: @default-active-border-color;
+	border-radius: @default-window-border-radius;
 }
 
 mainbox {
@@ -29,84 +28,82 @@ mainbox {
 }
 
 inputbar {
-	margin: 10px;
+	margin: @default-margin;
 	children: [prompt, textbox-prompt-colon, entry, case-indicator];
-	border-color: #ff6767;
-	padding: 10px;
-	border: 4px;
-	border-radius: 10px;
+	border-color: @default-active-border-color;
+	padding: @default-padding;
+	border: @default-border-size;
+	border-radius: @default-border-radius;
 }
 
 prompt {
-	text-color: #ffffff;
+	text-color: @default-text-color;
 }
 
 textbox-prompt-colon {
 	expand: false;
 	str: " : ";
-	margin: 0 1ch 0 0;
-	text-color: #ffffff;
+	margin: @default-prompt-margin;
+	text-color: @default-text-color;
 }
 
 entry {
-	text-color: #ffffff;
+	text-color: @default-text-color;
 }
 
 case-indicator {
-	text-color: #abcdef;
+	text-color: @default-text-color;
 }
 
 mode-switcher, message {
-	margin: 10px;
-	spacing: 10px;
+	margin: @default-margin;
 }
 
 textbox {
-	text-color: #ffffff;
-	padding: 10px;
-	border: 4px;
-	border-radius: 10px;
-	border-color: #ff6767;
+	text-color: @default-text-color;
+	padding: @default-padding;
+	border: @default-border-size;
+	border-radius: @default-border-radius;
+	border-color: @default-active-border-color;
 }
 
 button, {
-	text-color: #ffffff;
-	padding: 10px;
-	border: 4px;
-	border-radius: 10px;
-	border-color: #454545;
+	text-color: @default-text-color;
+	padding: @default-padding;
+	border: @default-border-size;
+	border-radius: @default-border-radius;
+	border-color: @default-normal-border-color;
 }
 
 button selected {
 	highlight: bold;
-	border-color: #ff6767;
+	border-color: @default-active-border-color;
 }
 
 listview {
-	margin: 10px;
+	margin: @default-margin;
 	lines: 7;
-	spacing: 10px;
+	spacing: @default-spacing;
 }
 
 element {
-	padding: 10px;
-	spacing: 10px;
-	border-radius: 10px;
-	border: 4px;
+	padding: @default-padding;
+	spacing: @default-spacing;
+	border-radius: @default-border-radius;
+	border: @default-border-size;
 	children: [element-icon, element-text];
 }
 element-text, element-icon {
-	background-color : inherit;
-	text-color	     : #ffffff;
+	text-color: @default-text-color;
 }
 
 element normal {
-	border-color: #454545;
+	border-color: @default-normal-border-color;
 }
 
 element selected {
-	border: 4px;
-	border-color: #ff6767;
-	border-radius: 10px;
+	border: @default-border-size;
+	border-color: @default-active-border-color;
+	border-radius: @default-border-radius;
 	highlight: bold;
 }
