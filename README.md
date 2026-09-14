@@ -1,10 +1,12 @@
 # install
 ```bash
+[ -d $HOME/.config/rofi ] && mv $HOME/.confg/rofi{,.bak}
 git clone https://github.com/ilgizar-khis/rofi.git $HOME/.config/rofi
 ```
 or
 
 ```bash
+[ -d $HOME/.config/rofi ] && mv $HOME/.confg/rofi{,.bak}
 git clone https://github.com/ilgizar-khis/rofi.git
 ln -s $PWD/rofi $HOME/.config/rofi
 ```
